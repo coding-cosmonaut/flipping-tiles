@@ -1,0 +1,85 @@
+body {
+  width: 100dvw;
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1.5fr));
+  grid-auto-rows: 200px;
+  gap: 5px;
+}
+
+.container {
+  /* width: 150px;
+  height: 200px; */
+  perspective: 800px;
+}
+
+/*HOVER FLIP */
+/* .container:hover > .card {
+  transform: rotateY(180deg);
+  cursor: pointer;
+} */
+/*HOVER FLIP */
+
+/* CLASS TO ADD TO FLIP - TIMER */
+.card-flip {
+  transform: rotateY(180deg);
+}
+/* CLASS TO ADD TO FLIP */
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+/* .front {
+  background-image: url(https://source.unsplash.com/random/350x500);
+} */
+
+.back {
+  background: linear-gradient(to left, #3d348b, #f6b819);
+  transform: rotateY(180deg);
+}
+
+.wrapper {
+  background: linear-gradient(45deg, #3d348b, #f6b819, #5a4fbd);
+}
+
+.back-wrapper {
+  background: linear-gradient(45deg,#3d348b, #251f53, #352d78 , #453b9e,#4d42b0, #5a4fbd);
+}
+
+.wrapper,
+.back-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: 600% 100%;
+  animation: gradient 16s linear infinite;
+  animation-direction: alternate;
+  border-radius: 12px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/* 
+ --main-purple: #3d348b;
+  --lighter-purple: #5a4fbd;
+  --orange-color: #f6b819; */
